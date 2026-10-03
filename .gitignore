@@ -1,0 +1,21 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Local environments
+.envs/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Large/local data
+data/raw/
+data/cache/
+
+# Runtime output
+logs/
+*.log
+core.*
