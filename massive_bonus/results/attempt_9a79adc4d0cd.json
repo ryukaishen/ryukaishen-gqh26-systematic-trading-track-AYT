@@ -1,0 +1,13 @@
+{
+  "status": "claimed_before_bonus_data",
+  "config_sha256": "f0d9113eb89350c3ee473a7218e322c53f73f6a6eb21ea38126d9e659500201f",
+  "prereg_sha256": "a8054c104d87f212633c7ca18f8ea89a2ed08f12ac37d6d396e7bec3ac3971ee",
+  "windows": {
+    "start": "2024-01-01",
+    "end": "2025-12-31",
+    "oos_start": "2026-01-01",
+    "oos_end": "2026-08-31",
+    "offline": false
+  },
+  "RUN_PLACEBO": true
+}
