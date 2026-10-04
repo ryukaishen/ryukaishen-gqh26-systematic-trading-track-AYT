@@ -15,6 +15,8 @@ def csvwrite(name,rows,fields=None):
 def pct(v):return 'unmeasured' if v is None else f'{100*v:.2f}%'
 def fmt(v):return 'unmeasured' if v is None else f'{v:.4f}' if isinstance(v,float) else str(v)
 def generate():
+    if (FINAL/'submission_seal.json').exists():
+        raise RuntimeError('submission_sealed_use_run_all_offline_for_cached_rendering')
     FINAL.mkdir(parents=True,exist_ok=True);(FINAL/'figures').mkdir(exist_ok=True)
     definition=json.loads((ROOT/'data/raw/stage_c_definitions/manifest.json').read_text())
     mp=ROOT/'data/raw/stage_c_quotes/M.json';ms=json.loads(mp.read_text()) if mp.exists() else {}

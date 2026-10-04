@@ -1,3 +1,3 @@
-# Core acquisition/analysis: Python 3.14 standard library, including compression.zstd.
-# Plotting can use a separate Python >=3.10 environment (preinstalled on HiPerGator).
+# Public artifact rendering: Python >=3.10
+# Original acquisition/core pipeline: Python 3.14 standard library (compression.zstd).
 matplotlib>=3.8,<4

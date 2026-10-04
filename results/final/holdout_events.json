@@ -1,0 +1,14 @@
+[
+  {
+    "event_id": "0209c2927981a87662f2cb2dacce2289b84ae0260492843ac2fe2d14486d2d67",
+    "symbol": "CPB",
+    "issuer_cik": "0000016732",
+    "split": "holdout",
+    "entry_session": "2026-09-03",
+    "exit_session": "2026-09-18",
+    "M": null,
+    "S0": 23.785,
+    "status": "excluded",
+    "reason": "invalid_M"
+  }
+]

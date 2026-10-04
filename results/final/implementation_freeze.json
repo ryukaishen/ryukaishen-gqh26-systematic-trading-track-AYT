@@ -1,0 +1,91 @@
+{
+  "frozen_at": "2026-10-04T14:03:19.174213+00:00",
+  "files_sha256": {
+    "EXPERIMENT.md": "d07b413aaa099db7c95b7a7938a811609de0f4519f9bb354ed9c4a5ddf076a0a",
+    "README.md": "6d86e228f5170549e1abe4111f9475faf538170bb430f352ffdf3a5e7369503f",
+    "requirements.txt": "a7f5033a762f6fd0344e91eca2541186569dcbc3f01f4b58b21631ecaaa706aa",
+    "run_all.py": "e071cb3a5753fa923fab71598b7868443eab3e206e55cd4980f74d149a2f1189",
+    "scripts/amend_full_nbbo_budget.py": "986891472ee242ea3078756745d81af7ddbf1e03684258149c62cc5a79c09740",
+    "scripts/development_calendar.py": "e53479049b046c5f809dfaa8b3eb514a63eed8e3177731a9b3e9168d35153ef5",
+    "scripts/downstream_acquire.py": "fade95c3b4a0da8de08faf06d090fd16e8bff1addbbbd25006afbd5760c740ae",
+    "scripts/final_holdout.py": "c999430c69d83bb926e27574ff0f2faa4ed65873bd25813d50d342eb291f25e8",
+    "scripts/final_report.py": "3b8ff2b4f85e73c0941fc92ee6368d8bbe4e881c243e55f5a064529a293c5fea",
+    "scripts/fmp_eod_stage_b2.py": "d1a139edd83358f3e0543105998f3ab4ebcbebb9f54eb0fe60b249762deba04f",
+    "scripts/fmp_full_timing_gate.py": "74a432e566f6e94fa7c87d7ba7cc198b3062e51a7c9e7e9448959e0eb538f926",
+    "scripts/fmp_stage_b1.py": "bb72515e6f78d6c3c874ab2dea4afbaa3ac0977b3b091c9a7497e3b369463178",
+    "scripts/freeze_development_sample.py": "aefd514617c4dcaf122876f05e82f8d8365c64104e9ce50c446a3629473d34b0",
+    "scripts/frozen_sample_nbbo.py": "03e93a7cf9331f449af62ef849ad5b494c661d32242ccc8b3ccfaac211595201",
+    "scripts/full_universe_nbbo.py": "40063db48c38eb2abe32daef93b0b8798a202e72dda0f38cd0bae384a5b85946",
+    "scripts/historical_reference_anchors.py": "86586df5f0402df081e8447642561bd894bb33e8c8cdbc016a0bd3d16ab3806b",
+    "scripts/historical_reference_reconcile.py": "cd0408b22482f573ad81957007c90d56982b027ab1e15c853555de94f5a93de7",
+    "scripts/holdout_acquire.py": "05540704cad1d96913a82bcac0c650c299bba9f602fcc066d8dde45c58d59e3c",
+    "scripts/local_reference_bracketing.py": "ddc8a69c04842cea2125402ef3d1103e969529468b4b514b38b54b7859f2cd4e",
+    "scripts/massive_grouped_pilot.py": "a33fc8ab240a14f540dfc7e741d816b0e0ccd5281e92ef72debe2959ed5a732d",
+    "scripts/massive_stage_b2.py": "b38334874c08f7fa7edf395ace80778ba2d0f67bb1a3210e0e8c90c87a6142e9",
+    "scripts/nbbo_condition_dictionary.py": "f07d0a9c74d8c081319fe01380a9c364737e1f2684f84d9c77d5f46df983cb88",
+    "scripts/plot_final.py": "19550b5dfef623acc29f7a66a89b82ef92852f26f490087a32eb13200bae330a",
+    "scripts/prepare_nbbo_benchmark.py": "6a8b75d6f31608d9e74e4e7bba30fa902905c6b693d6b690cbe641a3973ed3d4",
+    "scripts/quant_core.py": "692db799eef9a166cfb674d6ae6307533511e89790dc5495b7e813195bd8361b",
+    "scripts/report_nbbo_benchmark.py": "ddaf5888f13fe8254acfc006f26c60c5bb0dcaa5abe1363955d409659b3ef7f0",
+    "scripts/stage_b2_reference_estimate.py": "3401dd139dd265af51fc55f159cbdc7c5c6f05224d952954878e5c5936454fd8",
+    "scripts/stage_c_databento_metadata.py": "b8bcd2d6f8b65d44bcb3fe7c259d84996ebf5ff5bc866967d81aadb2e1fb9d8b",
+    "scripts/stage_c_definition_estimates.py": "501b237b24280111b3175d33ac1cecc01692f78613ef665e4ecda60d29dd0173",
+    "scripts/stage_c_definitions_job.py": "570546c8795e014292262196d91056f0b3cc18106c3169dec75abba388dc8cf6",
+    "scripts/stage_c_nbbo_estimate.py": "c4c5ab4806de3ccb20e8f387929a0d05046b3ec321b75a5c3c71f51527b458a6",
+    "scripts/stage_c_quotes.py": "6684e20fdcb6939df52995c72d47a3d3672d769ef882c69e44ad287492c5c2e7",
+    "scripts/stage_c_stock_nbbo_probe.py": "9434a66cbda9da3df81be20579b8e5134921aa95fc510224ae72e3e680008e86",
+    "scripts/submission_budget.py": "d40afb2792669e13c3134c3648715cee814ee2b36d17963e58d3770a6a3c1402",
+    "slurm/stage_c_definitions.sbatch": "c0aca866709e80889933fb7e81926b92237e47c6c0d3590471f604ab0354a2f9",
+    "slurm/stage_c_quotes.sbatch": "44cfcbf074a97990b121e4a47f977c84a98a11a3f306ecfd5cc583279b400743",
+    "slurm/submission_development.sbatch": "8cef95cc7a89e6b21807ea46bbd44e63bc2ebb4e84fae1200ad32a9c2a8040a9",
+    "slurm/submission_finalize.sbatch": "2e6b438b479acea065439f664c0d7ff2f6a04a7728cf330f6b3d1085369f63e0",
+    "tests/test_holdout_gate.py": "dfe908d83bd2ed7be5f07502902318d711f72f2e1256350e0f283c7ea24408da",
+    "tests/test_quant_core.py": "62fa4332468a0848d5329ebe4fdc5c7d7d9470453eb6b199913c4dde0a5fb9cb",
+    "tests/test_stage_c_definitions.py": "d811623b89bc1bbff048ede6c6af1e96eaa7795ac11b122ca81ea66c9a1cd8df",
+    "tests/test_stage_c_quotes.py": "bcb0a1cec7ff3a1ca88aee69747ce9def131ed55d92d275788fcae3deb487ea6",
+    "tests/test_submission_budget.py": "639abdd200038a256cbbb3b906a0582a3008fa378634962e638cab48f7aea978"
+  },
+  "splits": {
+    "train": [
+      "2023-04-03",
+      "2024-12-31"
+    ],
+    "validation": [
+      "2025-01-01",
+      "2025-12-31"
+    ],
+    "holdout": [
+      "2026-01-01",
+      "2026-09-18"
+    ]
+  },
+  "holdout_last_scheduled_exit": "2026-10-02",
+  "authority": "Explicit submission-critical user authorization 2026-10-04",
+  "feasibility": "failed 80% historical-contract coverage in train and validation; continue transparently as exploratory",
+  "development_scope": "full-universe M and fixed 20-event exploratory downstream benchmark; not replacement primary sample",
+  "timestamp_rules": "Fixed half-open ET windows; CBBO ts_recv interval end aligns completed prior stock minute; >=3 shared valid minutes; reference cutoff before 15:55",
+  "costs": "1% initial equity allocations, 50% stock gross cap, 1% window participation, half median spread +2bps, .001/share commissions; doubled friction and .005/share $1-min sensitivity; historical fee schedule; missing borrow excluded",
+  "unresolved": [
+    "Original-release/vendor vintage",
+    "Historical bracketing continuity",
+    "Exchange/CAT route fees",
+    "Complex corporate-action completeness",
+    "Full downstream and holdout input acquisition exceeds funded request scope"
+  ],
+  "budget": {
+    "recorded_at": "2026-10-04T14:02:37.898009+00:00",
+    "authority": "EXPERIMENT.md A7",
+    "request_ceiling": 20000,
+    "transfer_ceiling": 4000000000,
+    "cumulative_requests": 19596,
+    "cumulative_bytes": 1770808880,
+    "remaining_requests": 404,
+    "remaining_bytes": 2229191120,
+    "last_action": "authorized submission pipeline; held-out data protected until freeze",
+    "operational_timing_gate": "passed train/validation; historical timestamp/vintage unproven",
+    "databento_cost_stop_usd": 12,
+    "databento_definition_cost_upper_bound_usd": 11.589746363452,
+    "databento_total_cost_upper_bound_usd": 11.619018800497
+  },
+  "no_tuning_after_holdout": true
+}

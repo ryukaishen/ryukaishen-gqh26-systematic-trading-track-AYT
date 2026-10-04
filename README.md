@@ -12,41 +12,21 @@ Use UF HiPerGator Slurm compute nodes for retrieval and substantial processing. 
 
 Set `DATABENTO_API_KEY`, `MASSIVE_API_KEY`, and `FMP_API_KEY` in the environment or an uncommitted `.env` as appropriate. Never place keys in source, output, command arguments, or commits. Raw licensed data is not redistributed; reproducibility uses local hash-checked receipts and inputs.
 
-## Reproduce from checkpoints
-
-Inside a Slurm compute allocation:
+## One-command public artifact reproduction
 
 ```bash
-/apps/conda/26.7/bin/python run_all.py --offline
-/apps/conda/26.7/bin/python -m unittest discover -s tests -p 'test_*.py'
+python run_all.py --offline
 ```
 
-`--offline` performs no API calls and reads development checkpoints only. It generates coverage, available-event observations, train/validation summary, primary/doubled-cost/conservative-commission/physical-hedge portfolios, annualized metrics, turnover, equity curves, X-bucket research returns, and a quant note. Missing outcomes stay missing; daily closes cannot replace prescribed NBBO references.
+This renders committed derived result checkpoints into figures and the three-page PDF, without API access, raw-data dependencies or reevaluating 2025 outcomes. Python >=3.10 and Matplotlib from requirements.txt are sufficient; the existing HiPerGator plotting interpreter is used when present. This is artifact reproduction, not a fresh independent raw-data backtest. Licensed raw/cache data remains local and excluded from Git. Original acquisition scripts and receipts document the completed quote/M pipeline; the submission runner disables further acquisition or evaluation.
 
-## Checkpointed acquisition
+## Final OOS disclosure
 
-The approved quote estimate is $0.029263496349 and 15,710,720 billable bytes, with a 624,933,376-byte transfer bound for 581 selected-symbol batches. Conservative definitions plus quotes remain below $12. The cumulative shared caps are 20,000 requests and 4 GB, including retries and failures.
+2025 was used for data-feasibility/coverage checks, with no recorded strategy-return inspection or return-based tuning of thresholds, sizing, costs or holding period. It is the primary separated OOS period, but the fixed benchmark has zero measurable signals/outcomes and zero trades: OOS performance is unavailable. Earlier development and post-freeze reports already processed these exclusions; no further 2025 outcome evaluation is performed. Full-universe OOS performance was not acquired.
 
-```bash
-sbatch --export=ALL slurm/stage_c_quotes.sbatch
-sbatch --export=ALL --dependency=afterok:QUOTE_JOB_ID slurm/submission_development.sbatch
-```
+Train and 2025 base/doubled-cost results: zero entries, annualized return/volatility/Sharpe/drawdown unavailable, annualized turnover 0. No measurable X buckets exist; empty panels report this explicitly. Historical M is valid for 7 train and 917 validation events in the full universe, but none in the fixed 20-event downstream benchmark. Changing or expanding that sample would alter the analysis and has not been done.
 
-Do not submit a duplicate active job. Workers take a global acquisition lock and reserve request, transfer and cost budgets before requests. Completed files and selection identities are reused; incomplete responses retain conservative reservations. Quote acquisition uses four bounded workers and only selected-pair `OPRA.PILLAR cbbo-1m` for `[15:50,15:55)` ET. CBBO timestamps mark completed interval ends; alignment uses the preceding underlying minute bin and requires at least three shared valid observations. The final interval outside the half-open query window is not added. Invalid flags, nonpositive prices/sizes, locked/crossed books and spreads above 20% are rejected.
-
-The downstream demonstration uses the existing fixed outcome-blind 20-event benchmark, without replacement. It is **not** a full-universe strategy sample. The full-universe S0/contract/M population remains intact. The remaining 406 requests before early recovery overhead cannot fund all full-universe stock/SPY reaction and ten-session NBBO windows. The demonstration's exclusions, capacity and borrow limitations must accompany any reported results.
-
-## Frozen holdout, one attempt
-
-Only after development implementation, tests and limitations are complete:
-
-```bash
-/apps/conda/26.7/bin/python run_all.py --offline --freeze --holdout-once
-```
-
-The freeze records hashes of every script/test/batch file, README, dependencies and specification, plus fixed splits, timing/cost rules and failed feasibility findings. The runner refuses changed code and atomically claims a single holdout state **before** reading any 2026 input or calling its calendar API. It cannot rerun or overwrite the claim. No tuning follows holdout access.
-
-When validated holdout inputs exist at `data/raw/final_holdout/inputs.json`, the one-shot runner evaluates the same frozen observation, regression and portfolio code. The input includes `preregistered_input_validation: true`, events, historical M, windows, bars, actions and optional documented borrow. With no prepared validated holdout inputs, it acquires a bounded raw calendar after freezing and attempts at most three legacy-universe events selected by smallest outcome-blind event SHA256 among unambiguous source bmo/amc and provided fiscal-quarter/year records. Historical reference/identity, liquidity, S0, original option selection, quote quality, reaction, beta/actions and outcome rules are enforced without replacing failures. The pilot is exploratory; an insufficient, blocked or empty sample is inconclusive. Raw calendar counts are not eligible-event counts and never become fabricated performance. Full historical holdout preparation would require separate funded reference/S0/definition/quote/reaction/outcome acquisition. The maximum-three pilot is not described as a full confirmatory holdout evaluation. It cannot reopen, extend dates, replace failures or tune afterward.
+Full confirmatory 2026 acquisition was not completed under the fixed budget. The already-completed max-three pilot is exploratory only, with zero measurable outcomes or trades. It does not satisfy confirmatory OOS. No further pilot work is authorized by the runner. Original freeze and pilot claims are preserved; the final submission seal hashes strategy code and public artifacts. No methodology is changed after freeze.
 
 ## Fixed implementation and disclosure
 

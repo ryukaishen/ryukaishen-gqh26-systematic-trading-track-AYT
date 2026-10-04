@@ -19,6 +19,10 @@ The population is the frozen operational train/validation sample. Unresolved roo
 
 ![Coverage](figures/coverage.png)
 
+## Primary separated 2025 OOS: unavailable performance
+
+2025 was used for data-feasibility/coverage checks, with no recorded strategy-return inspection or return-based tuning of thresholds, sizing, costs or holding period. It is the primary separated OOS period, but the fixed benchmark has zero measurable signals/outcomes and zero trades: OOS performance is unavailable. Earlier development and post-freeze reports already processed these exclusions; no further 2025 outcome evaluation is performed. Full-universe OOS performance was not acquired.
+
 ## Available-event demonstration
 
 The existing outcome-blind, chronological/liquidity-stratified 20-event NBBO benchmark is used only as an exploratory implementation demonstration. Its original selection was not a strategy sample. The request ceiling prevents full-universe post-event/reference/execution NBBO acquisition; this demonstration cannot establish full-population predictive performance. Every selected benchmark event is retained in the attrition log; invalid events are not replaced. Ten-session split-boundary crossings are purged by calendar, not returns.
@@ -49,14 +53,17 @@ Initial allocation is 1% of $1 million reference equity per issuer, with a 50% s
 | validation | conservative_commission | 0 | unmeasured | unmeasured | unmeasured | unmeasured | no_executable_entries |
 | validation | physical_hedge | 0 | unmeasured | unmeasured | unmeasured | unmeasured | no_executable_entries |
 
+Annualized turnover is **0.000** for both train and 2025 OOS, under base and doubled costs. All four performance statistics remain unmeasured because no entries were executable. Doubled-cost sensitivity therefore provides no empirical cost-resilience evidence.
+
 ![Equity curves](figures/equity_curve.png)
 
 Annualization uses 252 sessions and daily action-aware close marking. Turnover, drift, orders, partial fills, missing marks and unresolved exposures are exported. Unresolved exits remain in the portfolio and invalidate complete executable performance rather than disappearing from the trade sample. No-entry plots and metrics are explicitly labeled, not evidence of profitability. The primary executable metric is mean net ten-session trade P&L per initial executed stock dollar; uncertainty is insufficient for small demonstration samples.
 
 ## Holdout and reproducibility
 
-Holdout status: **sealed_pending_implementation_freeze**. Holdout access is prohibited until source/specification hashes, splits, processing rules, feasibility findings and cost assumptions are frozen. The one-shot runner claims a durable state before any holdout acquisition/evaluation; it will not rerun or tune afterward. Budget/entitlement/data shortages yield an inconclusive result, not new dates or modified signals.
+Full confirmatory 2026 acquisition was not completed under the fixed budget. The already-completed maximum-three pilot is exploratory only: two invalid S0 exclusions and one invalid synchronized M exclusion, zero outcomes and zero trades. It cannot replace the required confirmatory OOS. No more pilot work is performed.
 
-Run `python run_all.py --offline` on a compute node to regenerate artifacts from checkpoints. See README.md for acquisition, freeze and one-shot holdout commands. All submission artifacts are in results/final/; all plots are in results/final/figures/. No API keys enter receipts or artifacts. Current shared usage is 19,596/20,000 requests and 1,770,808,880/4,000,000,000 bytes; conservative Databento spend is $11.61901880 under $12. Budget guards include failed attempts and bounded retries.
+The submission is sealed. Run `python run_all.py --offline` to render the frozen public result checkpoints into figures and the three-page PDF without API access or outcome reevaluation. Raw licensed data is excluded from the public repository; full independent raw-data reproduction requires the original local checkpoints and vendor entitlements. Original implementation-freeze and one-shot pilot records remain intact; submission_seal.json records final presentation changes and unchanged strategy-code hashes.
+
 
 Sources: [approved specification](../../EXPERIMENT.md), [OPRA schema](https://databento.com/docs/venues-and-datasets/opra-pillar), [SEC historical fee change](https://www.sec.gov/rules-regulations/fee-rate-advisories/2025-2), [FINRA fee schedule](https://www.finra.org/sites/default/files/2024-11/sr-finra-2024-019.pdf), [NYSE calendar](https://www.nyse.com/publicdocs/nyse/ICE_NYSE_2026_Yearly_Trading_Calendar.pdf).

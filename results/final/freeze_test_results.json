@@ -1,0 +1,4 @@
+{
+  "passed": true,
+  "output": "{\"holdout_status\": \"inconclusive_unfunded_preregistered_holdout_inputs\", \"attempts\": 1, \"inferential_evaluations\": 0}\n.............................\n----------------------------------------------------------------------\nRan 29 tests in 0.064s\n\nOK\n"
+}

@@ -26,8 +26,8 @@ for ax,split in zip(axes,('train','validation')):
    curves=p['curve'];ax.plot(range(len(curves)),[100*(r['equity']/1000000-1) for r in curves],label=label,color=color,lw=1.4)
  if not any_entries:ax.text(.5,.5,'No executable entries\nPerformance unmeasured',transform=ax.transAxes,ha='center',va='center')
  else:ax.legend(fontsize=8)
- ax.axhline(0,color='grey',lw=.5);ax.set(title=split.title()+' demonstration',xlabel='Regular sessions (split capital reset)')
-axes[0].set_ylabel('Marked portfolio return (%)');fig.suptitle('Exploratory fixed-benchmark equity; net of modeled costs');save(fig,'equity_curve')
+ ax.axhline(0,color='grey',lw=.5);ax.set(title=('Train development' if split=='train' else '2025 OOS unavailable'),xlabel='Regular sessions (split capital reset)')
+axes[0].set_ylabel('Marked portfolio return (%)');fig.suptitle('Train / 2025 separated OOS: no executable performance');save(fig,'equity_curve')
 bins=[(0,.5),(.5,1),(1,1.5),(1.5,2),(2,3),(3,float('inf'))];labels=['(0,0.5]','(0.5,1]','(1,1.5]','(1.5,2]','(2,3]','>3'];fig,axes=plt.subplots(1,2,figsize=(11,4),sharey=True)
 for ax,split in zip(axes,('train','validation')):
  rows=[r for r in data['events'] if r['split']==split and r.get('research_status')=='measured']
@@ -37,7 +37,7 @@ for ax,split in zip(axes,('train','validation')):
    if vals:
     v=mean(vals);err=1.96*stdev(vals)/math.sqrt(len(vals)) if len(vals)>1 else 0;ax.bar(i,v,color='#0d9488');ax.errorbar(i,v,yerr=err,color='#1e293b',capsize=3);ax.annotate('n='+str(len(vals)),(i,v),xytext=(0,5 if v>=0 else -12),textcoords='offset points',ha='center',fontsize=8)
  else:ax.text(.5,.5,'No measurable research outcomes\nNo daily-price substitution',transform=ax.transAxes,ha='center',va='center')
- ax.axhline(0,color='grey',lw=.6);ax.set_xticks(range(6),labels,rotation=35);ax.set(title=split.title(),xlabel='Fixed X bucket')
+ ax.axvline(1.5,color='#b91c1c',ls='--',lw=1,label='X>1 boundary');ax.legend(fontsize=8);ax.axhline(0,color='grey',lw=.6);ax.set_xticks(range(6),labels,rotation=35);ax.set(title=split.title(),xlabel='Fixed X bucket')
 axes[0].set_ylabel('Mean direction-adjusted beta-residual 10-session return (%)');fig.suptitle('Exploratory available-event outcome; error bars are descriptive ±1.96 SE');save(fig,'x_buckets')
 fig,ax=plt.subplots(figsize=(8,4))
 for split,color in [('train','#2563eb'),('validation','#c2410c')]:
@@ -75,13 +75,13 @@ with PdfPages(ROOT/'results/final/QUANT_NOTE.pdf') as pdf:
  y=paragraph(fig,'At D, complete stock/SPY reaction measurement in [10:00,10:05) ET. r is the split-comparable stock price reaction; a is its total-return reaction minus clipped beta times SPY total-return reaction. Beta is intercept OLS over the preceding 120 sessions with >=100 paired returns, clipped to [0,2]. X=abs(r)/M; require finite nonzero sign-consistent r and a. Trade only X>1 in sign(a).',.895)
  y=paragraph(fig,'Enter in [10:10,10:20) ET; exit in the same window ten regular sessions later, D=session zero. Size 1% of initial $1 million reference equity per issuer, 50% aggregate stock allocation cap, proportional simultaneous sizing, fixed shares except actions. Known S1 sets order intentions. All same-security orders share 1% observed execution-window volume. Missing/partial scheduled exits remain unresolved exposures.',y)
  y=paragraph(fig,'Modeled fills pay half median NBBO spread plus 2 bps adverse slippage and $0.001/share commission. Report doubled modeled friction and $0.005/share/$1-min commissions separately. Historical sell-side SEC/FINRA fees and action cashflows are included; exchange/CAT route pass-through remains unresolved. Missing historical borrow excludes shorts and short hedge legs from executable returns, not research observations. Reference fills are benchmarks, not guaranteed execution.',y)
- metric_rows=[[r['split'],r['implementation'].replace('conservative_commission','conserv. comm.'),str(r['executed_trades']),value(r['annualized_return'],True),value(r['sharpe_zero_risk_free']),value(r['max_drawdown'],True)] for r in summary['performance']]
- table_on(fig,['Split','Implementation','Entries','Ann. return','Sharpe','Max DD'],metric_rows,[.075,.365,.85,.18]);image_on(fig,'equity_curve',[.035,.075,.93,.27]);pdf.savefig(fig);plt.close(fig)
+ metric_rows=[[('Train' if r['split']=='train' else '2025 OOS'),('Base' if r['implementation']=='directional' else '2x costs'),str(r['executed_trades']),value(r['annualized_return'],True),value(r['annualized_volatility'],True),value(r['sharpe_zero_risk_free']),value(r['max_drawdown'],True),value(r['annualized_turnover'])] for r in summary['performance'] if r['implementation'] in ('directional','doubled_cost')]
+ table_on(fig,['Split','Costs','Entries','Ann. return','Ann. vol.','Sharpe','Max DD','Ann. turnover'],metric_rows,[.075,.365,.85,.18]);image_on(fig,'equity_curve',[.035,.075,.93,.27]);pdf.savefig(fig);plt.close(fig)
  fig=page('Available-event outcomes and limitations',3)
  y=paragraph(fig,'The full-universe S0/contracts/M population remains intact. The fixed outcome-blind 20-event NBBO benchmark is only an exploratory downstream demonstration because the shared request ceiling cannot fund full-universe reaction/outcome windows. No failed event is backfilled. Calendar boundary crossings are purged before outcome analysis.',.895)
  y=paragraph(fig,'Research Y is direction-adjusted stock-minus-beta-SPY total return between prescribed NBBO entry/exit references. Both X groups remain eligible regardless of borrow, allocation or execution. Primary OLS uses I(X>1), abs(r), and RV20 with two-way issuer/date clustering. Missing groups/rank deficiency are inconclusive; fewer than 30 clusters in either dimension is unreliable. No outcome-based thresholds, trimming or tuning.',y)
  table_on(fig,['Split','Fixed events','Signal measurable','Outcomes','X>1','X<=1'],[[r['split'],'10',str(r['signal_measurable']),str(r['research_outcomes']),str(r['X_gt_1']),str(r['X_le_1'])] for r in summary['development']],[.075,.62,.85,.10])
  image_on(fig,'x_buckets',[.035,.285,.93,.32])
- y=paragraph(fig,'Holdout: '+summary['holdout']['status']+'. A durable implementation/specification hash freeze precedes 2026 access. The runner permits one attempt only; missing validated funded inputs yield an incomplete/inconclusive result, never fabricated returns or new dates.',.265,8.5)
+ y=paragraph(fig,'2025 OOS: used for feasibility/coverage checks, with no recorded return-based tuning. Zero benchmark signals/outcomes/trades; performance unavailable. Prior reports already processed exclusions; final rendering does not reevaluate outcomes. Full confirmatory 2026 acquisition was not completed under the fixed budget. The max-three pilot is exploratory only, with zero outcomes; it is not confirmatory OOS.',.265,8.5)
  paragraph(fig,'Limitations: FMP original-release/vendor vintage and uninterrupted common-stock status between reference brackets are unproven. Minute sampling does not prove continuous liquidity. Complex corporate actions, exchange/CAT costs, historical borrow and execution attainability constrain interpretation. Full CSV ledgers, metrics, frozen source hashes and source links accompany this PDF in results/final/ and README.md.',y,8.5)
  pdf.savefig(fig);plt.close(fig)
