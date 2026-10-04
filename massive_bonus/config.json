@@ -25,8 +25,8 @@
     "2026-08-31"
   ],
   "universe": "official_static_TOP_100",
-  "cost_model": "official_starter_unchanged_unresolved",
-  "placebo": "official_starter_unchanged_unresolved",
+  "cost_model": "official: abs(entry put premium)/S_entry * COST_HAIRCUT * 2",
+  "placebo": "official sample_placebo unchanged; configurable n=1, seed=7, gap_days=30",
   "sensitivity_expiry": [
     "1m",
     "2m",
@@ -37,6 +37,35 @@
     0.05,
     0.1
   ],
-  "execution_status": "blocked_missing_official_starter",
-  "bonus_outcomes_inspected": false
+  "execution_status": "ready_for_official_capped_pilot",
+  "bonus_outcomes_inspected": false,
+  "starter_sha256": "95a69893838694ba3380f88347aed05c1a219c40f642214bcde4838e8f043308",
+  "organizer_source_sha256": "9d7846a3d119febc952e5467eac873bff6f044ce5b8a44b98ea11bf7c53000ab",
+  "max_events_per_split": 1,
+  "N_PLACEBO": 1,
+  "RUN_PLACEBO": true,
+  "placebo_seed": 7,
+  "PLACEBO_GAP_DAYS": 30,
+  "EXPIRY_BUCKETS": {
+    "1m": [
+      21,
+      45,
+      30
+    ],
+    "2m": [
+      46,
+      80,
+      60
+    ],
+    "3-6m": [
+      90,
+      180,
+      120
+    ]
+  },
+  "RISK_FREE": 0.04,
+  "STRIKE_WINDOW": 0.25,
+  "MAX_STALE_SESSIONS": 3,
+  "COST_HAIRCUT": 0.05,
+  "source_provenance": "Organizer starter path supplied by user; source cells read, stored outputs not inspected"
 }
