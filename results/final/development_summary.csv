@@ -1,0 +1,3 @@
+X_gt_1,X_le_1,entry_dates,exclusions,fixed_demonstration_events,issuers,research_outcomes,sample_scope,signal_measurable,split
+0,0,0,"{""no_selected_contract_or_M_not_acquired"": 3, ""invalid_M"": 7}",10,0,0,exploratory fixed benchmark; not full-universe predictive test,0,train
+0,0,0,"{""no_selected_contract_or_M_not_acquired"": 3, ""invalid_M"": 7}",10,0,0,exploratory fixed benchmark; not full-universe predictive test,0,validation

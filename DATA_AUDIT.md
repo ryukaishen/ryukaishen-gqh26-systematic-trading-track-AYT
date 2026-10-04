@@ -493,3 +493,30 @@ Acquire only approved development dates plus the required 20-session pre-start h
 ## Current Stage B2 source amendment (A3 supersedes A2 source only)
 
 Use Massive grouped-daily aggregates, adjusted=false, for all 710 lookback/development sessions from 2023-03-06 through 2025-12-31. Preserve previous close ≥$10 and trailing-20-session median unadjusted close × volume ≥$20M with all 20 prior sessions required. The user explicitly accepts grouped volume's potential extended-hours inclusion as a prospective operational approximation to regular-session dollar volume, solely because the intended bulk source is unavailable and before strategy-return inspection. FMP EOD Bulk HTTP 402 is final; do not retry. Keep cumulative caps at 1,500 requests / 4 GB, counting all prior Stage B requests and bytes. Verify and reuse existing within-range Massive pilot files. Estimate reference work only after screening; no holdout or post-entry returns. EXPERIMENT.md A3 controls.
+
+
+## Acquisition budget amendment A4
+
+The latest explicit user authorization prospectively raises the total request cap from 1,500 to 2,500 while keeping 4 GB. Complete exact-date historical common-stock/reference validation using remaining local candidate gaps; reuse verified existing snapshots and bound pagination. The hypothesis, signal, liquidity thresholds, universe, splits, holdout and outcome rules remain unchanged. Operational bmo/amc coverage is passed; historical timestamp/vintage proof remains pending. Exact-date reference page estimates and actual usage control the budget; 604 dates is a request lower bound, not a guarantee of one page/date. EXPERIMENT.md A4 is authoritative.
+
+
+## Current historical-status approximation A5
+
+Stop Massive reference acquisition. Apply local matching consecutive-anchor bracketing with stable FIGI/issuer identity and qualifying common-stock type; preserve exact-date evidence and flag inconsistent/unbracketed observations. Disclose that bracketing is an operational approximation, not uninterrupted-listing proof. Compare resulting operational event/issuer/date counts with the unchanged prospective minimums without asserting unmeasured sign-consistency or X-group counts. Begin Stage C when candidate capacity is sufficient, subject to actual contract-selection/spot, Databento timestamp/entitlement/cost and no-holdout requirements. EXPERIMENT.md A5 is authoritative.
+
+
+## Frozen-sample execution A6
+
+EXPERIMENT.md A6 prospectively freezes 1,500 train / 600 validation by issuer-CIK/release-date/fiscal-year/quarter SHA256 ranking. It supersedes the pilot-only parent-chain prohibition for historical event-root definitions and authorizes pre-decision reaction inputs. Preserve fixed windows, historical-only selection and all signal rules. Never replace failed sampled events. Total requests: 50,000; cumulative bytes: 4 GB; existing USD 1 cost stop remains pending concrete larger-cost approval. No holdout or subsequent ten-session returns.
+
+
+## A6 paused: 20-event NBBO benchmark only
+
+The latest user instruction pauses the 2,100-event sample and its acquisition authorization pending the representative pre-event NBBO benchmark. No sampled quotes were acquired. EXPERIMENT.md A6 pause controls population selection; do not invoke the frozen-sample acquisition while paused. No X/reactions/outcomes/holdout in the benchmark.
+
+Benchmark decision: retain the full 14,340-event development universe. Weighted complete-window projection is 14,340 NBBO requests / 0.661 GB / 59.00 sequential minutes, with a heuristic 1.5× runtime sensitivity of 88.50 minutes. Twenty measured windows all produced valid S0, but full-universe coverage is unmeasured. The sampling branch remains inactive. See results/NBBO_REPRESENTATIVE_BENCHMARK.md for all measurements, provider-limit evidence, transfer accounting, selection and uncertainty. This decision authorizes neither holdout nor subsequent returns. The prospective internal request-budget update is required before a full acquisition; the 4 GB cumulative transfer ceiling remains unchanged.
+
+
+## A7 full-universe pre-event NBBO execution
+
+The latest explicit user authorization raises Massive requests to 20,000 while retaining cumulative 4 GB. Use the shared benchmark validity/window implementation for all 14,340 events, reuse completed benchmark windows and checkpoint pagination. Two concurrent event windows are permitted under paid-plan request policy. Record all calls conservatively in the shared ledger. After adequate S0 coverage, proceed to historical parent definitions and selected-pair-only cbbo-1m for M/coverage, with provider cost checks. No post-event, X, outcomes, subsequent returns or holdout acquisition. EXPERIMENT.md A7 is authoritative.

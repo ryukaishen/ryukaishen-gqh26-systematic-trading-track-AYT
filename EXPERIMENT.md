@@ -810,3 +810,93 @@ This amendment is made solely because the intended regular-session bulk source i
 Preserve previous unadjusted close ≥$10, median `close × volume` over all preceding 20 completed exchange sessions ≥$20M, all 20 observations required, the 1,500-request / 4,000,000,000-byte cumulative Stage B caps, and every other hypothesis, signal, split, boundary purge, holdout protection, feasibility threshold, cost and outcome rule. Use only the 710 sessions from 2023-03-06 through 2025-12-31; verified cached pilot files may be reused within that range. No later-session prices may enter a candidate's screen.
 
 Massive historical reference/corporate-action/stock quote and Databento options requirements remain unchanged. Liquidity survivors are provisional pending historical common-stock/type/issuer/security and event/fiscal-period validation; no full feasibility pass is inferred.
+
+
+### Amendment A4 — total acquisition request budget
+
+Recorded at: 2026-10-04T00:13:58.267693-04:00
+Authorization: Explicit user instruction before remaining exact-date reference acquisition and before any outcome inspection.
+Classification: Operational acquisition-budget amendment only.
+
+Previous total acquisition request ceiling: 1,500 requests. Replacement total acquisition request ceiling: **2,500 requests**. The cumulative transfer ceiling remains **4,000,000,000 bytes**. Count all recorded Stage B acquisition requests/bytes, including unsuccessful calls and reused-file accounting without double counting.
+
+Reason: Exact historical reference validation requires at least approximately 604 further date-specific requests, with actual pagination and exception work additional. This amendment occurred before any strategy returns were inspected. It does not change the hypothesis, signal, thresholds, universe rules, split dates, holdout protection, outcome rules, timestamp evidence requirements or fiscal/issuer deduplication requirements. No holdout or post-entry returns/P&L are authorized. The operational FMP bmo/amc gate remains passed; full historical timestamp/vintage verification remains unproven.
+
+
+### Amendment A5 — operational historical-status bracketing
+
+Recorded at: 2026-10-04T00:24:51.338451-04:00
+Authorization: Explicit user instruction before outcome inspection; no further Massive historical-reference API requests are permitted.
+Classification: Prospective operational historical-status approximation, not proof of uninterrupted listing.
+
+Use the 34 completed Massive reference snapshots locally. At a candidate decision/entry session D equal to an anchor, retain exact-date common-stock and identifier evidence. Between consecutive anchors, require the candidate ticker to appear in both as qualifying U.S. common stock, with matching stable FIGI and issuer identity. Mark ticker/type/identifier changes, missing bracket endpoints or missing identity evidence unresolved/excluded from operational eligibility. Do not extrapolate outside the bracketing date range. Matching endpoints do not establish uninterrupted common-stock status or ticker ownership on every intervening day; disclose this limitation. Exact-date reference status does not verify earnings release timing or vendor vintage.
+
+Preserve all original hypotheses, signals, thresholds, issuer/share-class selection, fiscal-period deduplication, split dates, purging, holdout and outcome rules. Fiscal/quarter labels and original-release verification limitations remain explicit. Operational FMP bmo/amc coverage remains passed; full historical timestamp/vintage proof remains unproven. No returns or holdout observations are authorized.
+
+
+### Amendment A6 — frozen outcome-blind development sample
+
+Recorded at: 2026-10-04T04:48:33.219599+00:00
+Authorization: Explicit user instruction before any strategy returns or X values were inspected.
+
+Full-universe NBBO acquisition is operationally impractical. From the 14,340 operationally eligible events, rank independently within each split by the ascending SHA256 hex digest of the UTF-8 literal `stable_issuer_id|event_date|fiscal_year|fiscal_quarter`. Define stable_issuer_id as the stored zero-padded issuer CIK (not ticker or share-class FIGI), event_date as the ISO earnings release_date, and fiscal labels as their stored canonical strings (year and Q1–Q4). No whitespace is added around pipes. Resolve a hash tie lexicographically by that same input string, then stable share-class identifier and ticker. Freeze the first 1,500 train and 600 validation events. Failures or missing data remain exclusions within the frozen denominator; never backfill or expand after X or returns are observed. Preserve this exact deterministic ranking rule for the eventual holdout; holdout sample size remains unspecified and no holdout access is authorized now.
+
+Raise the cumulative operational acquisition request ceiling to 50,000 requests for this fixed sample, allowing quote pagination, cost metadata, historical definitions, selected-pair quotes and preregistered pre-decision stock/SPY/beta/action inputs. The 4,000,000,000-byte cumulative transfer ceiling remains unchanged. This authorization replaces pilot-only symbol restrictions with event-root Databento [ROOT].OPT historical definition queries, and authorizes only selected-pair cbbo-1m in the fixed pre-event window. Obtain provider cost/size estimates before billable retrieval; the existing USD 1.00 cost stop remains until a larger concrete estimate is approved.
+
+Compute S0, M, the completed pre-decision reaction r and residual a, X and feasibility counts only on this sample. No subsequent ten-session returns, P&L, or holdout acquisition/inspection is authorized. This amendment precedes any strategy returns or X inspection. All hypotheses, signals, price/liquidity thresholds, contract selection, beta/action treatment, quote quality, splits, boundary purging, holdout protections and outcome rules remain unchanged. FMP timing and A5 historical-status approximations and their limitations remain explicit.
+
+
+### Amendment A6 pause — benchmark before population decision
+
+Recorded at: 2026-10-04T05:00:44.772652+00:00
+The user paused A6 before any sample acquisition. Its local 2,100-event artifact and amendment had already been created, but are now inactive and preserved solely as an audit trail. No quotes, X, reactions, strategy outcomes or holdout data were acquired for that sample. The full 14,340-event universe remains the population for deciding between full acquisition and the proposed deterministic sample. Restore the prior 2,500-request ceiling during the 20-event benchmark; the 4 GB transfer ceiling remains.
+
+Select 20 benchmark events independently of outcomes: 10 train and 10 validation. Within each split, sort by entry session, release date, issuer CIK and symbol and divide into five equal-count chronological strata. Within each stratum sort by the stored pre-event trailing-20-session median dollar volume, split into lower and upper halves, and select one event from each half by smallest SHA256 of issuer CIK|release date|fiscal year|quarter. No X or post-event inputs enter selection. Acquire complete fixed pre-event windows sequentially, including pagination, and measure actual transferred bytes and end-to-end runtime. Report split-specific S0 success and extrapolate by split weights to the full universe, with uncertainty and provider/transfer limits disclosed. Retain the full universe if projected acquisition is at most 90 minutes and operationally feasible; otherwise return to the proposed deterministic sample. No X, reaction, outcome or subsequent-return inspection during this benchmark.
+
+### A6 benchmark decision — retain the full universe
+
+Recorded after the 20-event benchmark, before any X, reactions, strategy outcomes or subsequent returns were inspected. Benchmark: 20 complete NBBO windows, 20 requests including pagination (no additional pages required), 843,676 transferred NBBO bytes, 4.781935 seconds of end-to-end NBBO processing, valid S0 for 10/10 train and 10/10 validation events. Two auxiliary quote-condition schema calls used 22,183 bytes, for 22 total Massive calls / 865,859 total bytes. No historical security-reference acquisition occurred.
+
+Stratum-population weighting projects the full 14,340-event NBBO acquisition at 14,340 requests, 660,963,188 bytes and 59.002792 minutes. A heuristic 1.5× sensitivity gives 21,510 requests, 991,444,782 bytes and 88.504188 minutes; it is not a confidence bound. Projected central cumulative transfer, reusing benchmark windows, is 1,569,928,498 bytes under 4 GB. Existing historical quote access succeeded and Massive's official stock product page documents unlimited paid-plan API calls. Neither endpoint latency nor pagination tails are guaranteed by 20 observations.
+
+Under the user's prospective 90-minute decision rule, **retain all 14,340 operationally eligible development events** (8,688 train / 5,652 validation). A6's 2,100-event sampling branch remains inactive; its prior artifact is audit-only and must not drive acquisition or change the population. Original hypotheses, signals, quote/contract rules, feasibility minimums, splits, holdout and outcomes remain unchanged. No full-universe acquisition was executed during this benchmark. The internal request ceiling is currently restored to 2,500; raise it prospectively before full acquisition using the measured request estimate and explicit operational authorization. Continue to enforce the unchanged cumulative 4 GB transfer ceiling. Options and pre-decision reaction/beta/action costs remain separate from this NBBO projection. See results/NBBO_REPRESENTATIVE_BENCHMARK.md and data/cache/nbbo_benchmark_results.json.
+
+
+### Amendment A7 — full-universe pre-event NBBO acquisition budget
+
+Recorded at: 2026-10-04T05:14:26.082925+00:00
+Authorization: Explicit user instruction, justified by the completed representative benchmark, before any X values or strategy outcomes were inspected.
+
+Raise the operational Massive acquisition request ceiling from 2,500 to **20,000 requests**. Preserve the cumulative **4,000,000,000-byte** transfer ceiling. Conservatively count all previously recorded acquisition calls against the 20,000 ceiling in the shared ledger; no provider counter reset or prior request subtraction. Subsequent Databento calls are also recorded against this conservative shared counter unless explicitly separated in a later authorization. This is solely an operational acquisition-budget amendment, with no change to hypotheses, signals, price/liquidity thresholds, universe, split dates, purging, holdout, outcome rules or sample size. The proposed deterministic sample remains inactive; retain all 14,340 operationally eligible development events.
+
+Acquire complete underlying NBBO windows [15:50,15:55) ET using the benchmark implementation: valid SIP timestamps inside the window, positive bid, ask greater than bid, positive sizes, and no nonregular condition codes. Accept absent/empty conditions or code 1 (provider-labelled Regular Two-Sided Open), exactly as in the completed benchmark. Require at least three distinct valid minute bins and define S0 as the median of all valid quote midpoints. Reuse hash-verified complete benchmark windows. Checkpoint each page and complete event; count retries and failed requests/bytes; never use an incomplete page set for S0. Modest concurrency of two independent event windows is operationally permitted under the documented paid-plan request policy, within the existing Slurm compute allocation.
+
+If S0 coverage is adequate for continued feasibility measurement, proceed directly to historical event-root Databento OPRA.PILLAR definitions, original D+7…D+21 earliest-expiry/nearest-strike/lower-tie/standard-unadjusted-100-share/matching-pair selection, and only selected-pair cbbo-1m in the fixed pre-event window to compute M and contract/quote coverage. The original contract and synchronized-quote thresholds are unchanged. Obtain concrete cost/transfer estimates before billable Databento retrieval, retaining the existing dollar-cost stop until explicitly amended. No post-event/outcome requests, X calculation, subsequent ten-session returns or holdout access are authorized in this acquisition step. Operational FMP timing remains passed with historical timestamp/vintage unproven.
+
+
+### Stage C — authorized historical-definition cost stop
+
+Recorded at: 2026-10-04T09:38:40.166619+00:00
+Authorization: Explicit user approval to raise the Databento cost stop to **USD 12.00 for preregistered historical definitions only**, using the completed $11.407067812972 / 2,449,649,160-billable-byte estimate. Preserve the cumulative 20,000-request and 4,000,000,000-byte ceilings. Run billable retrieval only in a Slurm compute-node batch job, checkpoint complete date queries, and preserve unresolved roots as exclusions without substitutions.
+
+After complete definitions, select the original earliest-expiry D+7 through D+21 inclusive / nearest-strike / lower-tie / standard-unadjusted-100-share matching call-put pairs before quote quality. Obtain selected-pair cbbo-1m cost and size estimates separately; this approval does not authorize quote retrieval. Stop before any acquisition that risks the dollar or cumulative-transfer ceiling. No holdout, ten-day outcomes or methodology changes are authorized.
+
+### Submission-critical execution authorization
+
+Recorded 2026-10-04 before outcome inspection. User explicitly authorized immediate selected-pair quote retrieval if completed estimates remain under cumulative $12 / 4 GB / 20,000 requests, followed by M, frozen downstream implementation, development analysis and one final holdout evaluation after implementation freeze. Estimate passed: $11.619009859801 combined conservative spend, 624,933,376-byte quote transfer bound, 581 retrieval requests. Preserve the original contract-selection, quality, signal, costs and feasibility thresholds.
+
+Historical contract coverage fails the original 80% minimum in both development splits (73.94% train, 63.55% validation). The experiment remains infeasible under its original full-coverage specification. The user authorized transparent available-event hackathon analysis despite that failure; it does not turn feasibility into a pass.
+
+The shared request cap permits only 406 requests after selected-pair quotes, insufficient for full-universe post-event NBBO and outcomes. Any reuse of the existing outcome-blind 20-event benchmark for a budget-bounded downstream demonstration is exploratory, not a replacement primary strategy population or evidence of full-universe predictive performance. Retain all full-universe M results and exclusions, and disclose demonstration attrition without replacement of failed events.
+
+### Submission implementation choices before development outcomes
+
+Core computations use a standard-library implementation with action-aware raw-price total returns (cash dividends retained without reinvestment), intercept OLS beta, fixed X thresholds, and two-way cluster covariance with finite-cluster corrections and t degrees of freedom equal to the smaller cluster count minus one. Fewer than 30 clusters in either dimension remains unreliable/inconclusive. The descriptive X plot uses fixed buckets (0,0.5], (0.5,1], (1,1.5], (1.5,2], (2,3], and >3; these bins do not define new strategies.
+
+Intended shares use the completed S1, available before the execution window; historical midpoint execution with adverse half-spread plus 2 bps is a simulation benchmark. All same-security orders in an execution window share the participation budget. Daily marking uses raw closes with held-share corporate-action adjustments and accrues dividends as cash. Missing closes retain a previous mark with an explicit incomplete-mark flag; missing scheduled exits retain unresolved exposure. No-entry portfolio statistics are unmeasured rather than presented as evidence of zero-risk profitability.
+
+Modeled agency sell-side SEC/FINRA pass-through fees follow their historical schedules. Exchange/CAT route fees and any unresolved 2026 fee component remain disclosed as incomplete accounting; results cannot claim net of all fees. Missing borrow prevents executable shorts and short-SPY hedge legs. A prospective one-shot holdout freeze hashes all implementation/specification files before any 2026 input access. An incomplete/budget-blocked holdout acquisition is reported as inconclusive, never as a completed inferential evaluation.
+
+### Prospective budget-bounded holdout demonstration
+
+Before any 2026 observation access, freeze a maximum-three-event exploratory holdout pilot because full primary holdout acquisition is not funded under the unchanged caps. This is not a replacement confirmatory population. After the implementation hash freeze, acquire the fixed-date raw calendar and select the three smallest original issuer/release/fiscal-year/quarter hashes among unambiguous source bmo/amc records with provided fiscal-year/quarter fields in the legacy development issuer/FIGI universe. Exact historical common-stock identity/status, original liquidity, S0, expiry/strike/100-share matching pair, quote quality/synchronization, beta/reaction, outcome, execution and cost rules still apply. No failed selected event is replaced. Historical metadata and explicit cost/transfer estimates precede any billable holdout definitions or selected-pair quotes. Stop on the existing $12/4GB/20,000 ceilings. Empty/insufficient/blocked observations remain inconclusive, and the full original holdout is disclosed as incomplete. The raw-calendar API's original timestamp/vintage/completeness limitations remain explicit.

@@ -1,0 +1,3 @@
+M_coverage_population,M_coverage_selected_pairs,S0_coverage,contract_coverage,contract_feasibility,contract_target,population,quote_feasibility,quote_target_conditional,selected_pairs,split,valid_M,valid_S0
+0.0008057090239410681,0.0010896637608966376,0.9545349907918969,0.7394106813996317,failed,0.8,8688,failed,0.75,6424,train,7,8293
+0.16224345364472753,0.25528953229398665,0.8430644019815995,0.6355272469922152,failed,0.8,5652,failed,0.75,3592,validation,917,4765
