@@ -1,0 +1,42 @@
+{
+  "signal_tag": "share_repurchase_program",
+  "taxonomy": "1.0",
+  "strategy": "cash_secured_put",
+  "ENTRY": "post",
+  "headline_expiry": "3-6m",
+  "headline_otm": 0.05,
+  "horizons": [
+    1,
+    2,
+    3,
+    5,
+    10,
+    21,
+    42,
+    63,
+    "expiry"
+  ],
+  "in_sample": [
+    "2024-01-01",
+    "2025-12-31"
+  ],
+  "oos": [
+    "2026-01-01",
+    "2026-08-31"
+  ],
+  "universe": "official_static_TOP_100",
+  "cost_model": "official_starter_unchanged_unresolved",
+  "placebo": "official_starter_unchanged_unresolved",
+  "sensitivity_expiry": [
+    "1m",
+    "2m",
+    "3-6m"
+  ],
+  "sensitivity_otm": [
+    0.03,
+    0.05,
+    0.1
+  ],
+  "execution_status": "blocked_missing_official_starter",
+  "bonus_outcomes_inspected": false
+}

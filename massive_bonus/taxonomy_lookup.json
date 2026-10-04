@@ -1,0 +1,14 @@
+{
+  "endpoint": "/stocks/taxonomies/vX/disclosures",
+  "categories": 119,
+  "candidates": [
+    {
+      "primary_category": "capital_and_financing",
+      "secondary_category": "shareholder_returns",
+      "tertiary_category": "share_repurchase_program",
+      "description": "Share buyback program authorization, expansion, or update with amount and timing.",
+      "taxonomy": "1.0"
+    }
+  ],
+  "scope": "semantic definitions only; no filings/outcomes inspected"
+}
