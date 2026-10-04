@@ -29,3 +29,7 @@ Massive/Benzinga earnings access was entitlement-limited (HTTP 403) in `results/
 Treat FMP `time` values `bmo` and `amc` as event-session classification, not exact publication timestamps. Preserve `lastUpdated` unchanged for provenance. Its later dates do not prove historical record vintages or availability at the decision time; a 2026 update value on a development-era event is provenance metadata, not access to a holdout event. All original contemporaneous-verification and historical-availability requirements remain in force.
 
 `FMP_COVERAGE_AUDIT.md` is prepared and has not been executed. No new provider requests, holdout observations, prices, signals, strategy returns, or outcomes were accessed during this documentation task. The full pre-return feasibility gate remains unresolved.
+
+## Subsequent local operational timing-coverage gate
+
+The full saved development candidate extract was screened locally, including missing/other timing, using the prospectively amended Massive liquidity measurement. Both development splits exceed ≥90% under conservative eligibility bounds: train ≥99.751046%, validation 99.787137%. See results/FMP_FULL_TIMING_GATE.md for counts, ambiguity, duplicates and fiscal-field availability. The earlier capability-only limitation is superseded for this local symbol/date timing fraction; issuer/fiscal-period quarterly deduplication, security validation, actual release verification and historical availability remain pending. No full timestamp-feasibility pass is asserted. No new API requests or returns were used for the local gate.

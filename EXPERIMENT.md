@@ -42,7 +42,7 @@ At the decision time, require:
 - All 20 volume observations available.
 - Required historical stock/SPY prices, option reference records, and valid option quotes.
 
-Calculate daily dollar volume from regular-session price-times-volume observations. Use the same documented calculation throughout the experiment.
+Operationalize the liquidity screen using Massive grouped daily aggregates with `adjusted=false` and unadjusted `close × volume`, as prospectively authorized in Amendment A3. Grouped-daily volume may include extended-hours trading; disclose this operational approximation to the originally stated regular-session dollar-volume measure. Use the preceding 20 completed exchange sessions with all observations available. The ≥$10 previous unadjusted close and ≥$20 million median dollar-volume thresholds remain unchanged.
 
 Do not impose a fixed universe of 200 stocks. That figure in the research proposal was a sample-planning illustration.
 
@@ -779,3 +779,34 @@ Reason: Recorded Stage A Massive/Benzinga earnings probes were entitlement-limit
 This amendment occurred before any strategy returns were inspected. No holdout observations or strategy returns were accessed in preparing it. Every other hypothesis, signal, option-selection rule, split date, boundary purge, holdout protection, feasibility threshold, statistical test, and outcome rule is preserved.
 
 The prepared `FMP_COVERAGE_AUDIT.md` is a train+validation-only timing-coverage protocol, not execution authorization. The existing ≥90% requirement remains unchanged in each development split. Its usable-`bmo`/`amc` fraction is a necessary timing-coverage check, not a substitute for the existing verified-timestamp and historical-availability requirements. The full feasibility gate remains pending.
+
+
+### Amendment A2 — Stage B liquidity measurement source and acquisition ceiling
+
+Recorded at: 2026-10-03T23:30:42.706110-04:00
+Authorization: Explicit user instruction before acquisition and outcome inspection.
+Classification: Prospective primary universe-measurement amendment and Stage B acquisition-plan amendment; not a threshold change.
+
+Previous Section 3 text: “Calculate daily dollar volume from regular-session price-times-volume observations. Use the same documented calculation throughout the experiment.”
+Replacement: FMP EOD Bulk unadjusted `close × volume` operationalizes daily dollar volume over the preceding 20 completed exchange sessions. Use the previous completed session's `close` for the price filter. Do not use `adjClose`. FMP does not explicitly guarantee regular-session-only volume; this is a prospective measurement-source limitation, not evidence that the original regular-session semantics were verified. It may affect universe membership and must accompany reported findings.
+
+Preserve previous close ≥$10, trailing-20-session median dollar volume ≥$20M, all 20 observations required, and all other universe requirements. Early-close sessions count as completed sessions. No future prices, shortened histories, or present-day eligibility substitutions enter the screen.
+
+Stage B acquisition transfer ceiling changes from 2,000,000,000 to 4,000,000,000 bytes; the 1,500-request ceiling is unchanged. Conservatively count completed Stage B1 and the three Massive pilot requests/bytes against these totals. Scope: development data and required pre-start 20-session lookback through 2025-12-31 only. Retain only symbol/date/close/volume from EOD Bulk. Massive remains the source for historical reference/corporate-action/stock quotes; Databento remains the options source.
+
+This amendment occurred before any strategy returns were inspected. No holdout observations or post-entry returns/P&L were accessed. All other hypotheses, signals, split dates, purging, holdout protections, cost assumptions, feasibility thresholds and outcome rules remain unchanged. A liquidity-screen pass does not establish common-stock type, historical identity, quarterly-event provenance, timing coverage or full feasibility.
+
+
+### Amendment A3 — Massive grouped-daily liquidity approximation
+
+Recorded at: 2026-10-03T23:40:47.713258-04:00
+Authorization: Explicit user instruction, before acquisition and outcome inspection.
+Classification: Prospective primary universe-measurement source amendment; no threshold change.
+
+Previous source: FMP EOD Bulk `close × volume` under A2. Replacement source: Massive `/v2/aggs/grouped/locale/us/market/stocks/{date}?adjusted=false&include_otc=false`, using unadjusted `c` (close) × `v` (volume). Never use adjusted closes or returns. Massive grouped-daily volume may include extended-hours trading, so this is an operational approximation to the originally stated regular-session dollar-volume measure. It can affect universe membership and must be disclosed with all subsequent findings.
+
+This amendment is made solely because the intended regular-session bulk source is unavailable: Massive cannot establish exclusively regular-session grouped volume, and the replacement FMP EOD Bulk request returned HTTP 402 under current entitlement. FMP EOD Bulk will not be retried. This amendment occurred before any strategy returns were inspected. No holdout observations or post-entry returns/P&L were inspected.
+
+Preserve previous unadjusted close ≥$10, median `close × volume` over all preceding 20 completed exchange sessions ≥$20M, all 20 observations required, the 1,500-request / 4,000,000,000-byte cumulative Stage B caps, and every other hypothesis, signal, split, boundary purge, holdout protection, feasibility threshold, cost and outcome rule. Use only the 710 sessions from 2023-03-06 through 2025-12-31; verified cached pilot files may be reused within that range. No later-session prices may enter a candidate's screen.
+
+Massive historical reference/corporate-action/stock quote and Databento options requirements remain unchanged. Liquidity survivors are provisional pending historical common-stock/type/issuer/security and event/fiscal-period validation; no full feasibility pass is inferred.

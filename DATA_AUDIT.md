@@ -481,3 +481,15 @@ All account-specific findings remain untested.
 8. Present provider estimates before any Databento download.
 9. Retrieve only the separately approved smaller pre-event windows.
 10. Report feasibility results without inspecting returns.
+
+
+## Current Stage B acquisition amendment (A2)
+
+The user's latest instruction supersedes prior Stage B transfer estimates and session-source blockers: authorize FMP EOD Bulk `/stable/eod-bulk?date=YYYY-MM-DD` for the liquidity screen, with a 4,000,000,000-byte cumulative transfer ceiling and the unchanged 1,500-request ceiling. Count Stage B1 and the three completed Massive grouped pilot requests conservatively. Retain only symbol, date, close and volume; never adjClose or outcome fields. Use close × volume for the unchanged ≥$20M trailing-20-session median and previous close ≥$10. Record the lack of explicit regular-session-only volume guarantee as a prospective measurement limitation. EXPERIMENT.md A2 is authoritative.
+
+Acquire only approved development dates plus the required 20-session pre-start history, ending 2025-12-31. Verify the exchange session list, including the 2025-01-09 closure, and never query holdout dates. After screening, estimate historical-reference requests from survivors; do not make per-event reference requests for the unfiltered global calendar. Historical reference/identity and fiscal-period validation remain mandatory. Stage C options requests remain subject to the original contract-selection, historical-chain, schema and cost prerequisites; successful liquidity screening does not waive them.
+
+
+## Current Stage B2 source amendment (A3 supersedes A2 source only)
+
+Use Massive grouped-daily aggregates, adjusted=false, for all 710 lookback/development sessions from 2023-03-06 through 2025-12-31. Preserve previous close ≥$10 and trailing-20-session median unadjusted close × volume ≥$20M with all 20 prior sessions required. The user explicitly accepts grouped volume's potential extended-hours inclusion as a prospective operational approximation to regular-session dollar volume, solely because the intended bulk source is unavailable and before strategy-return inspection. FMP EOD Bulk HTTP 402 is final; do not retry. Keep cumulative caps at 1,500 requests / 4 GB, counting all prior Stage B requests and bytes. Verify and reuse existing within-range Massive pilot files. Estimate reference work only after screening; no holdout or post-entry returns. EXPERIMENT.md A3 controls.
