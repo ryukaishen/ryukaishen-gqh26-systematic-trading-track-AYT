@@ -73,7 +73,9 @@ EPS and revenue surprises are not primary signal inputs.
 
 ## 5. Event timestamp rules
 
-Massive’s earnings records identify candidate events. Verify actual release timing using contemporaneous release/news evidence or original filing evidence where appropriate.
+FMP earnings records identify candidate events, replacing Massive/Benzinga as the candidate earnings-event source. Treat FMP `time` values `bmo` (before market open) and `amc` (after market close) as the event-session classification, using the event date and exchange calendar to determine D. These categories are not exact publication timestamps. Missing, unknown, or other timing values are unusable for this classification; do not infer them from prices, returns, or `lastUpdated`.
+
+Verify the original release and timing against contemporaneous release/news evidence or original filing evidence where appropriate. All original event-eligibility, boundary, disagreement, pre-event quote-window, and decision-time availability requirements remain in force. A usable FMP classification alone does not establish those requirements.
 
 Preserve:
 
@@ -82,7 +84,7 @@ Preserve:
 - Original timezone.
 - UTC and America/New_York conversion.
 - Vendor ingestion timestamp when available.
-- Record update timestamp and revision history when available.
+- Record update timestamp and revision history when available, including FMP `lastUpdated` unchanged for provenance. `lastUpdated` is not evidence of historical record vintages, original publication time, or availability at the decision time.
 - Evidence establishing when the event was publicly knowable.
 
 Do not automatically equate SEC filing acceptance time with earnings release time.
@@ -760,3 +762,20 @@ Record amendments with:
 - Primary, secondary, or exploratory classification.
 
 Freeze the completed specification before examining strategy returns.
+
+
+### Amendment A1 — candidate earnings source and session classification
+
+Date: October 3, 2026.
+Authorization: User explicitly requested this prospective amendment.
+Classification: Primary data-source amendment; no strategy-rule change.
+
+Previous text in Section 5: “Massive’s earnings records identify candidate events. Verify actual release timing using contemporaneous release/news evidence or original filing evidence where appropriate.”
+
+Replacement: FMP identifies candidate earnings events; FMP `time` (`bmo`/`amc`) supplies event-session classification as specified in Section 5. Preserve `lastUpdated` for provenance without treating it as historical vintage evidence. Contemporaneous verification and historical availability requirements remain mandatory.
+
+Reason: Recorded Stage A Massive/Benzinga earnings probes were entitlement-limited (HTTP 403). FMP is the user-selected replacement candidate source. FMP access evidence and representative timing coverage are recorded separately in `results/FMP_FEASIBILITY.md`; no coverage pass is inferred from source selection.
+
+This amendment occurred before any strategy returns were inspected. No holdout observations or strategy returns were accessed in preparing it. Every other hypothesis, signal, option-selection rule, split date, boundary purge, holdout protection, feasibility threshold, statistical test, and outcome rule is preserved.
+
+The prepared `FMP_COVERAGE_AUDIT.md` is a train+validation-only timing-coverage protocol, not execution authorization. The existing ≥90% requirement remains unchanged in each development split. Its usable-`bmo`/`amc` fraction is a necessary timing-coverage check, not a substitute for the existing verified-timestamp and historical-availability requirements. The full feasibility gate remains pending.
